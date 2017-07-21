@@ -5,8 +5,8 @@ use \kartik\datecontrol\Module;
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'id' => 'Template',
-    'name' => 'Application',
+    'id' => 'Sistem Informasi Antrian',
+    'name' => 'Sistem Informasi Antrian',
     // set target language to be Indonesia
   'language' => 'id-ID',
     'as access' => [

@@ -12,8 +12,9 @@ $menuItems =
                     ['label' => 'App. Route', 'icon' =>  'fa fa-circle-o', 'url' => ['/mimin/route/'],'visible' => !Yii::$app->user->isGuest],
                     ['label' => 'Role', 'icon' =>  'fa fa-circle-o', 'url' => ['/mimin/role/'],'visible' => !Yii::$app->user->isGuest],
                     ['label' => 'User', 'icon' => ' fa fa-circle-o', 'url' => ['/mimin/user/'],'visible' => !Yii::$app->user->isGuest],
-                   ]]
-                        ,
+                   ]],
+                    ['label' => 'Antrian', 'icon' =>  'fa fa-circle-o', 'url' => ['/antrian/'],'visible' => !Yii::$app->user->isGuest],
+                   
                 ];     
                 
  if (!Yii::$app->user->isGuest)
