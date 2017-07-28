@@ -16,7 +16,7 @@ $menuItems =
                    ['label' => 'Lokasi', 'icon' =>  'fa fa-circle-o', 'url' => ['/lokasi/'],'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Tugas', 'icon' =>  'fa fa-circle-o', 'url' => ['/tugas/'],'visible' => !Yii::$app->user->isGuest],
                           
-            ['label' => 'Antrian', 'icon' =>  'fa fa-circle-o', 'url' => ['/antrian/'],'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Antrian', 'icon' =>  'fa fa-circle-o', 'url' => ['/antrian/'],]
                    
                 ];     
                 
