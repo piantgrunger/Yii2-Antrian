@@ -1,7 +1,15 @@
 <?php
 use yii\helpers\Html;
-
-
+   $session = Yii::$app->session;
+   if (!Yii::$app->user->isGuest)
+   {    
+   $id = Yii::$app->user->identity->username;
+   if (isset($session['nama_lokasi']))
+   {
+       $id.=' ( '.$session['nama_lokasi'].' ) ';
+   }    
+   }   
+   
 /* @var $this \yii\web\View */
 /* @var $content string */
 ?>
@@ -28,7 +36,7 @@ use yii\helpers\Html;
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs">   <?=(Yii::$app->user->isGuest?'Guest':Yii::$app->user->identity->username);?></span>
+                        <span class="hidden-xs">   <?=(Yii::$app->user->isGuest?'Guest':$id);?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -37,7 +45,7 @@ use yii\helpers\Html;
                                  alt="User Image"/>
 
                             <p>
-                                <?=(Yii::$app->user->isGuest?'Guest':Yii::$app->user->identity->username);?> 
+                                <?=(Yii::$app->user->isGuest?'Guest':$id);?> 
                                
                             </p>
                         </li>

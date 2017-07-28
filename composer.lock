@@ -1208,12 +1208,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-mpdf.git",
-                "reference": "5f3cf0d69881659b98e693b98c53f2cd00f4a934"
+                "reference": "67980ab7861ae9541b1a1784be8938dbeba13045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/5f3cf0d69881659b98e693b98c53f2cd00f4a934",
-                "reference": "5f3cf0d69881659b98e693b98c53f2cd00f4a934",
+                "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/67980ab7861ae9541b1a1784be8938dbeba13045",
+                "reference": "67980ab7861ae9541b1a1784be8938dbeba13045",
                 "shasum": ""
             },
             "require": {
@@ -1252,7 +1252,7 @@
                 "utf8",
                 "yii2"
             ],
-            "time": "2017-06-22T14:03:47+00:00"
+            "time": "2017-07-19 09:51:02"
         },
         {
             "name": "kartik-v/yii2-nav-x",
@@ -1623,12 +1623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-datetimepicker.git",
-                "reference": "e843520aca008dc0807aa7ea99bfab2cc03c9a3c"
+                "reference": "36f8327bbac47da7f3a38c94f0546308337aa963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datetimepicker/zipball/e843520aca008dc0807aa7ea99bfab2cc03c9a3c",
-                "reference": "e843520aca008dc0807aa7ea99bfab2cc03c9a3c",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datetimepicker/zipball/36f8327bbac47da7f3a38c94f0546308337aa963",
+                "reference": "36f8327bbac47da7f3a38c94f0546308337aa963",
                 "shasum": ""
             },
             "require": {
@@ -1664,7 +1664,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2017-06-08T05:53:28+00:00"
+            "time": "2017-07-18 08:42:00"
         },
         {
             "name": "kartik-v/yii2-widget-depdrop",
@@ -2726,12 +2726,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "d27d71d8abaecbba6c1d8180fb5f0a87ff987100"
+                "reference": "879f485abb27f290bab43f8d8948b86108f859ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/d27d71d8abaecbba6c1d8180fb5f0a87ff987100",
-                "reference": "d27d71d8abaecbba6c1d8180fb5f0a87ff987100",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/879f485abb27f290bab43f8d8948b86108f859ac",
+                "reference": "879f485abb27f290bab43f8d8948b86108f859ac",
                 "shasum": ""
             },
             "require": {
@@ -2818,7 +2818,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2017-07-17T13:21:49+00:00"
+            "time": "2017-07-24 20:25:47"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -2826,12 +2826,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "5aa5bb57a8eb7ab61995eb20e2a7a398706d615f"
+                "reference": "3ee110f4954d4a2f0893208da980ca8585f59aaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/5aa5bb57a8eb7ab61995eb20e2a7a398706d615f",
-                "reference": "5aa5bb57a8eb7ab61995eb20e2a7a398706d615f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/3ee110f4954d4a2f0893208da980ca8585f59aaa",
+                "reference": "3ee110f4954d4a2f0893208da980ca8585f59aaa",
                 "shasum": ""
             },
             "require": {
@@ -2868,7 +2868,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2017-06-26T19:42:30+00:00"
+            "time": "2017-07-24 15:06:54"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -2922,16 +2922,16 @@
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
-            "version": "dev-master",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "97d14bf3dad4bb389beb646e25c0d822db1365e8"
+                "reference": "8a03a62cbcb82e7697d3002eb43a8d2637f566ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/97d14bf3dad4bb389beb646e25c0d822db1365e8",
-                "reference": "97d14bf3dad4bb389beb646e25c0d822db1365e8",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/8a03a62cbcb82e7697d3002eb43a8d2637f566ec",
+                "reference": "8a03a62cbcb82e7697d3002eb43a8d2637f566ec",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +2968,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2017-05-24T10:14:19+00:00"
+            "time": "2017-05-01T08:29:00+00:00"
         }
     ],
     "packages-dev": [
@@ -3005,12 +3005,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "83ade5f05d0a7dcfc7c38c7b5fbcaca8863436b5"
+                "reference": "ea4244d0354634e020042278478c9842524b0459"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/83ade5f05d0a7dcfc7c38c7b5fbcaca8863436b5",
-                "reference": "83ade5f05d0a7dcfc7c38c7b5fbcaca8863436b5",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/ea4244d0354634e020042278478c9842524b0459",
+                "reference": "ea4244d0354634e020042278478c9842524b0459",
                 "shasum": ""
             },
             "require": {
@@ -3047,7 +3047,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-07-07T15:11:58+00:00"
+            "time": "2017-07-19T13:05:01+00:00"
         },
         {
             "name": "phpspec/php-diff",
