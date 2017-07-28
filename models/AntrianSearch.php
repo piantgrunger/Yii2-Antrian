@@ -79,5 +79,18 @@ class AntrianSearch extends Antrian
             return $query;
     }
     
+ public function searchTotalAntrian($date)
+    {
+        $query = Antrian::find()->where([
+               'tgl_antrian' => $date,
+               'stat_ambil' => 0
+        ])->count();
+        
+
+         
+       
+
+            return $query;
+    }
         
 }

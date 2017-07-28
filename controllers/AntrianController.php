@@ -38,6 +38,7 @@ class AntrianController extends Controller
        $model = new Antrian();
         $searchModel = new AntrianSearch();
         $dataProvider = $searchModel->searchLastNoAntrian(date('Y-m-d'));
+        $jumlah = $searchModel->searchTotalAntrian(date('Y-m-d'));
         
         if ($dataProvider == null )
         {
@@ -51,12 +52,14 @@ class AntrianController extends Controller
             $model->no_antrian =$no_antrian;
             $model->tgl_antrian =date('Y-m-d');
             $model->save();
-             
+            Yii::$app->controller->refresh();
+  
          }
 
         return $this->render('index', [
         
-            'no_antrian' =>$no_antrian
+            'no_antrian' =>$no_antrian,
+            'jumlah' => $jumlah,
         ]);
     }
 

@@ -57,7 +57,7 @@ class Tugas extends \yii\db\ActiveRecord
         return [
             [['id_user', 'id_lokasi'], 'required'],
             [['id_user', 'id_lokasi'], 'integer'],
-            [['start', 'finish', 'created_at', 'updated_at'], 'safe'],
+            [['start', 'finish', 'created_at','tgl_tugas' ,'updated_at'], 'safe'],
             [['id_lokasi'], 'exist', 'skipOnError' => true, 'targetClass' => Lokasi::className(), 'targetAttribute' => ['id_lokasi' => 'id_lokasi']],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];

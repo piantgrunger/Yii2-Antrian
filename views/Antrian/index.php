@@ -55,6 +55,8 @@ $this->registerJs($js);
           <div id='cetak'>
           <h1>Antrian Nomor :</h1>
           <h1 style="font-size: 1000%;"><?=$no_antrian;?></h1>
+          <h3>Menunggu <?=$jumlah?> Orang</h3>
+          
           </div>
           <h1><?= Html::button(Yii::t('app', 'Cetak'),  [
            

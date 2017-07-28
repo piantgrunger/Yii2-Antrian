@@ -6,6 +6,8 @@ use yii\helpers\ArrayHelper;
 use app\models\Tugas;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use app\models\d_tugas;
+use app\models\Antrian;
 
 use Yii;
 
@@ -49,6 +51,7 @@ class TugasController extends Controller
       {
           
           $model->load(Yii::$app->request->post());
+          $model->tgl_tugas = date('Y-m-d');
           $model->id_user= Yii::$app->user->id;  
           $model->save();  
           if ($session->isActive)
@@ -72,10 +75,12 @@ class TugasController extends Controller
 
     public function actionUpdate($id)
     {
-   $session = Yii::$app->session;
+    
+      $session = Yii::$app->session;
       $model = Tugas::findOne($id);
-          $lokasi= ArrayHelper::map(
-                     Lokasi::find()
+  
+      $lokasi= ArrayHelper::map(
+                    Lokasi::find()
                                         ->select([
                                                 'id_lokasi','nama_lokasi'
                                         ])
@@ -99,11 +104,25 @@ class TugasController extends Controller
  
       }
      
-        
+                $model_det = new d_tugas();
+      
+           $modelAntrian = Antrian::find()->where(['stat_ambil'=>'0',
+               'tgl_antrian'=>date('Y-m-d')])->orderBy(['No_antrian'=>SORT_ASC])->one();
+           
+             if ($modelAntrian!== null)
+             {   
+               $model_det->id_antrian = $modelAntrian->id_antrian;
+               $modelAntrian->stat_ambil=1;
+               $modelAntrian->save();
+               $model_det->id_tugas=$id;
+               $model_det->save();
+            }   
+            
        
         return $this->render('view',
                             ['lokasi'=>$lokasi,
                               'model'=>$model,
+                              'model_det' => $model_det  
                             ]);
     }    
            
