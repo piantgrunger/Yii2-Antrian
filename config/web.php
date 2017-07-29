@@ -16,7 +16,9 @@ $config = [
         'site/*',
         'debug/*',
         'mimin/*', // only in dev mode
-        'antrian/*' 
+        'antrian/*' ,
+        'posisi/*' ,
+        
     ],
 ],
     
