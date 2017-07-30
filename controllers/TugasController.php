@@ -103,9 +103,30 @@ class TugasController extends Controller
           return $this->redirect(['index']);   
  
       }
-     
+      
                 $model_det = new d_tugas();
       
+          if  ( $model->load(Yii::$app->request->post()))
+      {
+          
+        
+          $model->id_user= Yii::$app->user->id;  
+           $model->save();  
+          if ($session->isActive)
+          {
+             unset( $session['id_lokasi']);
+               unset( $session['nama_lokasi']);
+                  unset( $session['id_tugas']);
+          }   
+
+          return $this->redirect(['index']);   
+ 
+      }
+      else
+      if  ( $model_det->load(Yii::$app->request->post()))
+      {
+          
+        
            $modelAntrian = Antrian::find()->where(['stat_ambil'=>'0',
                'tgl_antrian'=>date('Y-m-d')])->orderBy(['No_antrian'=>SORT_ASC])->one();
            
@@ -116,7 +137,15 @@ class TugasController extends Controller
                $modelAntrian->save();
                $model_det->id_tugas=$id;
                $model_det->save();
-            }   
+  
+               
+             }
+            
+      
+      }
+  
+     
+      
             
        
         return $this->render('view',

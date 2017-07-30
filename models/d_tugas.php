@@ -53,7 +53,7 @@ class d_tugas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_tugas', 'id_antrian'], 'required'],
+            [['id_tugas'], 'required'],
             [['id_tugas', 'id_antrian'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['id_antrian'], 'exist', 'skipOnError' => true, 'targetClass' => Antrian::className(), 'targetAttribute' => ['id_antrian' => 'id_antrian']],
