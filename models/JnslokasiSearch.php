@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Antrian;
+use app\models\Jnslokasi;
 
 /**
- * AntrianSearch represents the model behind the search form of `app\models\Antrian`.
+ * JnslokasiSearch represents the model behind the search form of `app\models\Jnslokasi`.
  */
-class AntrianSearch extends Antrian
+class JnslokasiSearch extends Jnslokasi
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class AntrianSearch extends Antrian
     public function rules()
     {
         return [
-            [['id_antrian', 'no_antrian'], 'integer'],
-            [['tgl_antrian'], 'safe'],
+            [['id_jns_lokasi'], 'integer'],
+            [['nama_jns_lokasi', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class AntrianSearch extends Antrian
      */
     public function search($params)
     {
-        $query = Antrian::find();
+        $query = Jnslokasi::find();
 
         // add conditions that should always apply here
 
@@ -59,40 +59,13 @@ class AntrianSearch extends Antrian
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_antrian' => $this->id_antrian,
-            'no_antrian' => $this->no_antrian,
-            'tgl_antrian' => $this->tgl_antrian,
+            'id_jns_lokasi' => $this->id_jns_lokasi,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
+
+        $query->andFilterWhere(['like', 'nama_jns_lokasi', $this->nama_jns_lokasi]);
 
         return $dataProvider;
     }
-    
- public function searchLastNoAntrian($date,$id)
-    {
-        $query = Antrian::find()->where([
-               'tgl_antrian' => $date,
-                'id_jns_lokasi' => $id,
-        ])->orderBy(['No_antrian'=>SORT_DESC])->one();
-
-         
-       
-
-            return $query;
-    }
-    
- public function searchTotalAntrian($date,$id)
-    {
-        $query = Antrian::find()->where([
-               'tgl_antrian' => $date,
-               'stat_ambil' => 0,
-                      'id_jns_lokasi' => $id,
-        ])->count();
-        
-
-         
-       
-
-            return $query;
-    }
-        
 }

@@ -4,6 +4,8 @@
 use hscstudio\mimin\components\Mimin;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\bootstrap\ActiveForm;
+use kartik\select2\Select2;
 /*
 $gridColumns=[['class' => 'yii\grid\SerialColumn'], 
             'no_antrian',
@@ -48,8 +50,23 @@ $this->registerJs($js);
 <div class="antrian-index">
 
 
-     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+     <?php $form = ActiveForm::begin(); 
+         ?>
+        <?= $form->errorSummary($modelsearch) ?> <!-- ADDED HERE -->
 
+        
+    <?= $form->field($modelsearch, 'id_jns_lokasi')->widget(Select2::classname(), [
+    'data' => $jns_lokasi,
+    'options' => ['placeholder' => 'Pilih Jns Lokasi ...'],
+    'pluginOptions' => [
+        'allowClear' => true
+    ],])->label('Jns Lokasi');   ?>
+   
+
+    <div class="form-group">
+        <?= Html::submitButton(Yii::t('app', 'Change'), ['class' => 'btn btn-success']) ?>
+    </div>
+          <?php  ActiveForm::end(); ?>   
    
       <div class='jumbotron' >
           <div id='cetak'>

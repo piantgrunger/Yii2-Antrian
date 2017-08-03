@@ -1,6 +1,6 @@
 {
-    "name": "piantgrunger/yii2-single-app-template",
-    "description": "Yii 2 Single AdminLTE Project Template",
+    "name": "piantgrunger/yii2-Antrian",
+    "description": "Yii 2 Antrian",
     "authors": [
         {
             "name": "Alfian Naufal",
@@ -11,10 +11,7 @@
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/piantgrunger/Yii2-Single-App-Template/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "https://github.com/piantgrunger/Yii2-Single-App-Template/wiki",
-        "source": "https://github.com/piantgrunger/Yii2-Single-App-Template"
+        "source": "https://github.com/piantgrunger/Yii2-Antrian"
     },
     "minimum-stability": "dev",
     "require": {

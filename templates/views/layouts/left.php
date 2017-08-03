@@ -13,7 +13,9 @@ $menuItems =
                     ['label' => 'Role', 'icon' =>  'fa fa-circle-o', 'url' => ['/mimin/role/'],'visible' => !Yii::$app->user->isGuest],
                     ['label' => 'User', 'icon' => ' fa fa-circle-o', 'url' => ['/mimin/user/'],'visible' => !Yii::$app->user->isGuest],
                    ]],
-                   ['label' => 'Lokasi', 'icon' =>  'fa fa-circle-o', 'url' => ['/lokasi/'],'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Jenis Lokasi', 'icon' =>  'fa fa-circle-o', 'url' => ['/jnslokasi/'],'visible' => !Yii::$app->user->isGuest],
+            
+            ['label' => 'Lokasi', 'icon' =>  'fa fa-circle-o', 'url' => ['/lokasi/'],'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Tugas', 'icon' =>  'fa fa-circle-o', 'url' => ['/tugas/'],'visible' => !Yii::$app->user->isGuest],
                           
             ['label' => 'Antrian', 'icon' =>  'fa fa-circle-o', 'url' => ['/antrian/'],],

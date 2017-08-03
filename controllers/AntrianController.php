@@ -8,6 +8,9 @@ use app\models\AntrianSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\base\DynamicModel;
+use yii\helpers\ArrayHelper;
+use app\models\Jnslokasi;
 
 /**
  * AntrianController implements the CRUD actions for Antrian model.
@@ -35,10 +38,31 @@ class AntrianController extends Controller
      */
     public function actionIndex()
     {
-       $model = new Antrian();
+        $session = Yii::$app->session;
+        if (!isset($session['id_jns_lokasi'])) 
+        {   
+          $id_jns_lokasi=1;
+        } else {
+          $id_jns_lokasi =  $session['id_jns_lokasi'];  
+        }
+        $model = new Antrian();
+         $modelsearch = new DynamicModel([
+        'id_jns_lokasi'
+         ]);
+        $modelsearch->addRule(['id_jns_lokasi'], 'required');
+      
+        if  ($modelsearch->load(Yii::$app->request->post()))
+        {
+           $id_jns_lokasi = $modelsearch->id_jns_lokasi;
+           echo var_dump($id_jns_lokasi);
+           $session['id_jns_lokasi'] = $id_jns_lokasi;
+           $id_jns_lokasi =  $session['id_jns_lokasi']; 
+            
+        }
+        $modelsearch->id_jns_lokasi = $id_jns_lokasi;
         $searchModel = new AntrianSearch();
-        $dataProvider = $searchModel->searchLastNoAntrian(date('Y-m-d'));
-        $jumlah = $searchModel->searchTotalAntrian(date('Y-m-d'));
+        $dataProvider = $searchModel->searchLastNoAntrian(date('Y-m-d'),$id_jns_lokasi);
+        $jumlah = $searchModel->searchTotalAntrian(date('Y-m-d'),$id_jns_lokasi);
         
         if ($dataProvider == null )
         {
@@ -51,15 +75,28 @@ class AntrianController extends Controller
          if (Yii::$app->request->post() ) {
             $model->no_antrian =$no_antrian;
             $model->tgl_antrian =date('Y-m-d');
+            $model->id_jns_lokasi =$id_jns_lokasi;
+            
             $model->save();
             Yii::$app->controller->refresh();
   
          }
-
+         
+      
+          $jns_lokasi= ArrayHelper::map(
+           Jnslokasi::find()
+                                        ->select([
+                                                'id_jns_lokasi','nama_jns_lokasi'
+                                        ])
+                                        ->asArray()
+                                        ->all(), 'id_jns_lokasi','nama_jns_lokasi');
+         $modelsearch->id_jns_lokasi=$id_jns_lokasi ;
         return $this->render('index', [
         
             'no_antrian' =>$no_antrian,
             'jumlah' => $jumlah,
+            'modelsearch'=>$modelsearch,
+            'jns_lokasi' => $jns_lokasi,
         ]);
     }
 

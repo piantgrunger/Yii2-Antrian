@@ -9,16 +9,17 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
 
-
 /**
- * This is the model class for table "tb_m_lokasi".
+ * This is the model class for table "tb_m_jns_lokasi".
  *
- * @property int $id_lokasi
- * @property string $nama_lokasi
+ * @property int $id_jns_lokasi
+ * @property string $nama_jns_lokasi
  * @property string $created_at
  * @property string $updated_at
+ *
+ * @property TbMLokasi[] $tbMLokasis
  */
-class Lokasi extends \yii\db\ActiveRecord
+class Jnslokasi extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -41,7 +42,7 @@ class Lokasi extends \yii\db\ActiveRecord
     }
     public static function tableName()
     {
-        return 'tb_m_lokasi';
+        return 'tb_m_jns_lokasi';
     }
 
     /**
@@ -50,9 +51,9 @@ class Lokasi extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama_lokasi','id_jns_lokasi',], 'required'],
+            [['nama_jns_lokasi'], 'required'],
             [['created_at', 'updated_at'], 'safe'],
-            [['nama_lokasi'], 'string', 'max' => 255],
+            [['nama_jns_lokasi'], 'string', 'max' => 255],
         ];
     }
 
@@ -62,26 +63,18 @@ class Lokasi extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_lokasi' => Yii::t('app', 'Id Lokasi'),
-            'nama_lokasi' => Yii::t('app', 'Nama Lokasi'),
+            'id_jns_lokasi' => Yii::t('app', 'Id Jns Lokasi'),
+            'nama_jns_lokasi' => Yii::t('app', 'Nama Jns Lokasi'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
     }
-    
-        public function getJnslokasi()
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTbMLokasis()
     {
-        return $this->hasOne(Jnslokasi::className(), ['id_jns_lokasi' => 'id_jns_lokasi']);
-        
-        
+        return $this->hasMany(TbMLokasi::className(), ['id_jns_lokasi' => 'id_jns_lokasi']);
     }
-    
-        public function getNama_jns_lokasi()
-    {
-        return $this->jnslokasi->nama_jns_lokasi;
-        
-        
-    }
-    
-    
 }

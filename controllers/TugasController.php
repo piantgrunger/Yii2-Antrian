@@ -78,7 +78,13 @@ class TugasController extends Controller
     
       $session = Yii::$app->session;
       $model = Tugas::findOne($id);
+      $modelLokasi = Lokasi::findOne($session['id_lokasi']) ;
+      if($modelLokasi != null)
+      {
+        $id_jns_lokasi = $modelLokasi->id_jns_lokasi;
+      }
   
+      var_dump($id_jns_lokasi);
       $lokasi= ArrayHelper::map(
                     Lokasi::find()
                                         ->select([
@@ -104,9 +110,8 @@ class TugasController extends Controller
  
       }
       
-                $model_det = new d_tugas();
-      
-          if  ( $model->load(Yii::$app->request->post()))
+      $model_det = new d_tugas();
+             if  ( $model->load(Yii::$app->request->post()))
       {
           
         
@@ -128,7 +133,10 @@ class TugasController extends Controller
           
         
            $modelAntrian = Antrian::find()->where(['stat_ambil'=>'0',
-               'tgl_antrian'=>date('Y-m-d')])->orderBy(['No_antrian'=>SORT_ASC])->one();
+               'tgl_antrian'=>date('Y-m-d'),
+               'id_jns_lokasi'=>$id_jns_lokasi,
+               
+               ])->orderBy(['No_antrian'=>SORT_ASC])->one();
            
              if ($modelAntrian!== null)
              {   

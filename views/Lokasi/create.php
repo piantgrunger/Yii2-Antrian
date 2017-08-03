@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'jns_lokasi'=> $jns_lokasi,
     ]) ?>
 
 </div>

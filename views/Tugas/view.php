@@ -4,8 +4,12 @@ use kartik\select2\Select2;
 use kartik\form\ActiveForm;
 use yii\helpers\Html;
 
+$this->registerJsFile(Yii::$app->request->baseUrl.'/js/Terbilang.js');
+
+     
 ?>
 <div class="tugas-index">
+    <audio></audio>
 
     <p class="FlashPreviewBox">
 <h2> Selamat Datang <?=Yii::$app->user->identity->username?></h2>
@@ -30,13 +34,14 @@ use yii\helpers\Html;
         <?= $form->errorSummary($model_det) ?> <!-- ADDED HERE -->
         <?= $form->field($model_det, 'id_antrian')->hiddenInput()->label(""); ?>
     <h1>Antrian Nomor :</h1>
-          <h1 style="font-size: 500%;"><?=$model_det->no_antrian;?></h1>
+    <h1 style="font-size: 500%;" id="no_antrian"><?=$model_det->no_antrian;?></h1>
 
     
         <?php 
           echo  Html::submitButton(Yii::t('app', 'Panggil Baru'), ['class' => 'btn btn-success']) ;
           
         ?>
+         <?= Html::button('Panggil Ulang', [ 'class' => 'btn btn-primary', 'onclick' => ' (function ( $event ) { terbilang(document.getElementById(\'no_antrian\').innerText); })();' ]);?>
 
         
         
