@@ -11,7 +11,7 @@ class m170721_065432_create_tb_antrian extends Migration
         $this->createTable($this::tb_name,[
             'id_antrian' => $this->primaryKey(),
             'no_antrian' => $this->bigInteger()->notNull()->defaultValue(0),
-            'tgl_antrian' => $this->dateTime()->defaultExpression('NOW()')
+            'tgl_antrian' => $this->dateTime()
         
         ]);   
     }
