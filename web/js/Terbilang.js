@@ -1,4 +1,4 @@
-function terbilang(a){
+function terbilang(a,b){
 	var bilangan = ['','Satu','Dua','Tiga','Empat','Lima','Enam','Tujuh','Delapan','Sembilan','Sepuluh','Sebelas'];
 
 	// 1 - 11
@@ -112,23 +112,26 @@ function terbilang(a){
 
 	var pisah = kalimat.split(' ');
 	var full = [];
-	for(var i=0;i<pisah.length;i++){
-	 if(pisah[i] != ""){full.push(pisah[i].concat('.mp3') );}
+	full.push('nomorurut.wav');
+        for(var i=0;i<pisah.length;i++){
+	 if(pisah[i] != ""){full.push(pisah[i].concat('.wav') );}
 	}
+        
+        console.log(full);
 	//return full.join(' ');
-    var audio = new Audio(),
-    i = 0;
-  
+    var audio = new Audio()
+   
     audio.addEventListener('ended', function () {
-    i = ++i < pisah.length ? i : 0;
-    console.log(i)
-    audio.src = pisah[i];
-    alert(audio.src);
-    audio.play();
-    }, true);
+      i = 1;
+      audio.src = b+full[i];
+      audio.play();
+      full.splice(i, 1); 
+   
+ 
+    }, false);
     audio.volume = 0.3;
     audio.loop = false;
-    audio.src = pisah[0];
+    audio.src = b+full[0];
     audio.play();
 }
 

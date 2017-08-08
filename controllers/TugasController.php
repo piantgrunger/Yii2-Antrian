@@ -30,7 +30,7 @@ class TugasController extends Controller
       $session = Yii::$app->session;
                  
       $model = Tugas::find()->where(['id_user'=>Yii::$app->user->id,'finish'=>null])->one();
-      if($model==NULL)
+      if(($model==NULL) ||( !isset($session['id_tugas']) ) )
       { 
       
         $model= new Tugas();
@@ -84,7 +84,6 @@ class TugasController extends Controller
         $id_jns_lokasi = $modelLokasi->id_jns_lokasi;
       }
   
-      var_dump($id_jns_lokasi);
       $lokasi= ArrayHelper::map(
                     Lokasi::find()
                                         ->select([

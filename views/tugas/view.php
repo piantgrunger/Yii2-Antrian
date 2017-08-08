@@ -5,10 +5,9 @@ use kartik\form\ActiveForm;
 use yii\helpers\Html;
 
 $this->registerJsFile(Yii::$app->request->baseUrl.'/js/Terbilang.js');
-
-     
+        
 ?>
-<div class="tugas-index">
+<div class="tugas-index" >
     <audio></audio>
 
     <p class="FlashPreviewBox">
@@ -38,10 +37,10 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/js/Terbilang.js');
 
     
         <?php 
-          echo  Html::submitButton(Yii::t('app', 'Panggil Baru'), ['class' => 'btn btn-success']) ;
+          echo  Html::submitButton(Yii::t('app', 'Ambil Antrian Baru'), ['class' => 'btn btn-success']) ;
           
         ?>
-         <?= Html::button('Panggil Ulang', [ 'class' => 'btn btn-primary', 'onclick' => ' (function ( $event ) { terbilang(document.getElementById(\'no_antrian\').innerText); })();' ]);?>
+         <?= Html::button('Panggil Ulang', [ 'class' => 'btn btn-primary', 'onclick' => ' (function ( $event ) { terbilang(document.getElementById(\'no_antrian\').innerText,\''.Yii::$app->request->baseUrl.'/sound/'.'\') })();' ]);?>
 
         
         
