@@ -1,5 +1,5 @@
 function terbilang(a,b){
-	var bilangan = ['','Satu','Dua','Tiga','Empat','Lima','Enam','Tujuh','Delapan','Sembilan','Sepuluh','Sebelas'];
+	var bilangan = ['','satu','dua','tiga','empat','lima','enam','tujuh','delapan','sembilan','sepuluh','sebelas'];
 
 	// 1 - 11
 	if(a < 12){
@@ -7,14 +7,14 @@ function terbilang(a,b){
 	}
 	// 12 - 19
 	else if(a < 20){
-		var kalimat = bilangan[a-10]+' Belas';
+		var kalimat = bilangan[a-10]+' belas';
 	}
 	// 20 - 99
 	else if(a < 100){
 		var utama = a/10;
 		var depan = parseInt(String(utama).substr(0,1));
 		var belakang = a%10;
-		var kalimat = bilangan[depan]+' Puluh '+bilangan[belakang];
+		var kalimat = bilangan[depan]+' puluh '+bilangan[belakang];
 	}
 	// 100 - 199
 	else if(a < 200){
@@ -25,7 +25,7 @@ function terbilang(a,b){
 		var utama = a/100;
 		var depan = parseInt(String(utama).substr(0,1));
 		var belakang = a%100;
-		var kalimat = bilangan[depan] + ' Ratus '+ terbilang(belakang);
+		var kalimat = bilangan[depan] + ' ratus '+ terbilang(belakang);
 	}
 	// 1,000 - 1,999
 	else if(a < 2000){
@@ -36,80 +36,36 @@ function terbilang(a,b){
 		var utama = a/1000;
 		var depan = parseInt(String(utama).substr(0,1));
 		var belakang = a%1000;
-		var kalimat = bilangan[depan] + ' Ribu '+ terbilang(belakang);
+		var kalimat = bilangan[depan] + ' ribu '+ terbilang(belakang);
 	}
 	// 10,000 - 99,999
 	else if(a < 100000){
 		var utama = a/100;
 		var depan = parseInt(String(utama).substr(0,2));
 		var belakang = a%1000;
-		var kalimat = terbilang(depan) + ' Ribu '+ terbilang(belakang);
+		var kalimat = terbilang(depan) + ' ribu '+ terbilang(belakang);
 	}
 	// 100,000 - 999,999
 	else if(a < 1000000){
 		var utama = a/1000;
 		var depan = parseInt(String(utama).substr(0,3));
 		var belakang = a%1000;
-		var kalimat = terbilang(depan) + ' Ribu '+ terbilang(belakang);
+		var kalimat = terbilang(depan) + ' ribu '+ terbilang(belakang);
 	}
 	// 1,000,000 - 	99,999,999
 	else if(a < 100000000){
 		var utama = a/1000000;
 		var depan = parseInt(String(utama).substr(0,4));
 		var belakang = a%1000000;
-		var kalimat = terbilang(depan) + ' Juta '+ terbilang(belakang);
+		var kalimat = terbilang(depan) + ' juta '+ terbilang(belakang);
 	}
 	else if(a < 1000000000){
 		var utama = a/1000000;
 		var depan = parseInt(String(utama).substr(0,4));
 		var belakang = a%1000000;
-		var kalimat = terbilang(depan) + ' Juta '+ terbilang(belakang);
+		var kalimat = terbilang(depan) + ' juta '+ terbilang(belakang);
 	}
-	else if(a < 10000000000){
-		var utama = a/1000000000;
-		var depan = parseInt(String(utama).substr(0,1));
-		var belakang = a%1000000000;
-		var kalimat = terbilang(depan) + ' Milyar '+ terbilang(belakang);
-	}
-	else if(a < 100000000000){
-		var utama = a/1000000000;
-		var depan = parseInt(String(utama).substr(0,2));
-		var belakang = a%1000000000;
-		var kalimat = terbilang(depan) + ' Milyar '+ terbilang(belakang);
-	}
-	else if(a < 1000000000000){
-		var utama = a/1000000000;
-		var depan = parseInt(String(utama).substr(0,3));
-		var belakang = a%1000000000;
-		var kalimat = terbilang(depan) + ' Milyar '+ terbilang(belakang);
-	}
-	else if(a < 10000000000000){
-		var utama = a/10000000000;
-		var depan = parseInt(String(utama).substr(0,1));
-		var belakang = a%10000000000;
-		var kalimat = terbilang(depan) + ' Triliun '+ terbilang(belakang);
-	}
-	else if(a < 100000000000000){
-		var utama = a/1000000000000;
-		var depan = parseInt(String(utama).substr(0,2));
-		var belakang = a%1000000000000;
-		var kalimat = terbilang(depan) + ' Triliun '+ terbilang(belakang);
-	}
-
-	else if(a < 1000000000000000){
-		var utama = a/1000000000000;
-		var depan = parseInt(String(utama).substr(0,3));
-		var belakang = a%1000000000000;
-		var kalimat = terbilang(depan) + ' Triliun '+ terbilang(belakang);
-	}
-
-  else if(a < 10000000000000000){
-		var utama = a/1000000000000000;
-		var depan = parseInt(String(utama).substr(0,1));
-		var belakang = a%1000000000000000;
-		var kalimat = terbilang(depan) + ' Kuadriliun '+ terbilang(belakang);
-	}
-
+	
 	var pisah = kalimat.split(' ');
 	var full = [];
 	full.push('nomorurut.wav');
